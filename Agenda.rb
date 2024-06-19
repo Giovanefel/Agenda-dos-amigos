@@ -34,11 +34,10 @@ puts " 1. Contatos\n2. Adicionar Contato\n3.Ver Contrato\n4. Editar Contato\n5. 
         break
 
     when contato == 1
-
-
     end
 end
 # faça um teste para verificar se rodou 
+    # assim que alterar algo infomar no grupo
 
 
 
