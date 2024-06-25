@@ -12,3 +12,19 @@ Um projeto simples de Blog com funcionalidade de agenda, desenvolvido com Ruby o
 - Crud para eventos da agenda.
 - Interface de usuário para listar, vidualizar, criar, editar e excluir postagens e eventos.
 - Atualizações em tempo real usando Hotwire.
+
+## Tecnologias Utilizadas
+
+- Ruby on Rails
+- PostgreSQL
+- StimulusJS
+- Hotwire (Turbo + Stimulus)
+- Git e GitHub
+
+## Requisitos
+
+- Ruby 3.x.y (Definir a verção)
+- Rails 7.x.y (Definir a verção)
+- PostgreSQL
+- Yarn
+- Node.js
