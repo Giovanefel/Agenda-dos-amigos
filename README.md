@@ -27,4 +27,3 @@ Um projeto simples de Blog com funcionalidade de agenda, desenvolvido com Ruby o
 - Rails 7.x.y (Definir a verção)
 - PostgreSQL
 - Yarn
-- Node.js
