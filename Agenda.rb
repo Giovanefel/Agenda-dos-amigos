@@ -21,12 +21,13 @@
 ]
 def todos_contatos
     @agenda.each do |contato|
-        putd "#{contato[:nome]} - #{contato[:telefone]}"
+        puts"#{contato[:nome]} - #{contato[:telefone]}"
+    end
 end
 
 loop do 
 
-puts " 1. Contatos\n2. Adicionar Contato\n3.Ver Contrato\n4. Editar Contato\n5. Remover Contato\n0. Sair"
+puts " 1. Contatos\n2. Adicionar Contato\n3. Ver Contato\n4. Editar Contato\n5. Remover Contato\n0. Sair"
     codigo= gets.chomp.to_i
     case 
     when codigo == 0
