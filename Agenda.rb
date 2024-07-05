@@ -13,11 +13,7 @@
 # Podemos ver todos os contatos registrados ou somente um contato;
 
 @agenda =[
-{nome:"EuGiovane" , telefone:"21971331981"},
-#{nome:"Amigo1" , telefone:"1"},
-#{nome:"Amigo2" , telefone:"2"},
-#{nome:"Amigo3" , telefone:"3"},
-#{nome:"Amigo4" , telefone:"4"},
+{nome:"EuGiovane" , telefone:"219999999"},
 ]
 def todos_contatos
     @agenda.each do |contato|
@@ -32,29 +28,37 @@ def adicionar_contato
     telefone = gets.chomp
 
     @agenda << {nome: nome, telefone: telefone}
-
 end
+
+    def ver_contato
+        print"qual nome deseja?"
+        nome = gets.chomp
+
+        @agenda.each do |contato|
+            if contato [:nome].downcase.include?(nome.downcase)
+                puts"#{contato[:nome]} - #{contato[:telefone]}"
+            end
+        end
+    end
 
 loop do 
 
      puts "1. Contatos\n2. Adicionar Contato\n3. Ver Contato\n4. Editar Contato\n5. Remover Contato\n0. Sair"
     codigo = gets.chomp.to_i
-
+                                       # nos commits anteriores tinha when codigo == 'x' as vezes dava bug
+                                       # alterei para apenas when 'x' e esta executando com exito
     case codigo
-    when codigo == 0
+    when 0
         puts"Até logo"
     
     break
-    when codigo == 1
+    when 1
         todos_contatos
-        puts"lista de contatos"
-    
-    when codigo == 2
-    adicionar_contato
-    puts"dados do contato"
-    
-        
-     end
+    when 2
+        adicionar_contato
+    when 3
+        ver_contato 
+    end
 end
 # faça um teste para verificar se rodou 
     # assim que alterar algo infomar no grupo
