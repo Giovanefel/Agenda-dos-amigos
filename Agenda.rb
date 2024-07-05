@@ -32,7 +32,17 @@ def adicionar_contato
     telefone = gets.chomp
 
     @agenda << {nome: nome, telefone: telefone}
+end
 
+def Ver_contato
+    print"Qual nome voce deseja:"
+    nome = gets.chomp
+
+    @agenda.each do |contato|
+        if contato[:contato]. downcase.include?(nome.downcase)
+            puts "#{contato[nome]} - #{contato[:telefone]}"
+        end
+    end
 end
 
 loop do 
@@ -52,9 +62,10 @@ loop do
     when codigo == 2
     adicionar_contato
     puts"dados do contato"
-    
-        
-     end
+
+    when codigo == 3
+        Ver_contato
+    end
 end
 # faça um teste para verificar se rodou 
     # assim que alterar algo infomar no grupo
