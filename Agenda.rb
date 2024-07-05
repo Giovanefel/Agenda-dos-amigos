@@ -62,6 +62,7 @@ loop do
 end
 # faça um teste para verificar se rodou 
     # assim que alterar algo infomar no grupo
+    #continuar 
 
 
 
