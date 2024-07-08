@@ -32,16 +32,32 @@ def adicionar_contato                          # 2 adicionar todos os contatos
     @agenda << {nome: nome, telefone: telefone}
 end
 
-def Ver_contato                               # 3 mostrar o contato desejado
-    print"Qual nome voce deseja:"
-    nome = gets.chomp
+#def ver_contato                               # 3 mostrar o contato desejado
+   # print"Qual nome voce deseja:"
+   # nome = gets.chomp
 
+    #@agenda.each do |contato|
+    #   if contato[:contato].downcase.include?(nome.downcase)
+    #        puts "#{contato[:nome]} - #{contato[:telefone]}"
+   #         puts "-" * 20
+    #    end
+   # end
+#end
+def ver_contato                               # 3 mostrar o contato desejado
+    print "Qual nome você deseja: "
+    nome = gets.chomp
+  
     @agenda.each do |contato|
-        if contato[:contato]. downcase.include?(nome.downcase)
-            puts "#{contato[nome]} - #{contato[:telefone]}"
-        end
+      if contato[:contato] && nome && contato[:contato].downcase.include?(nome.downcase)  #PAREI AQUI aula2    2:20s coreçao do chatgpt 
+        puts "#{contato[:nome]} - #{contato[:telefone]}"
+        puts "-" * 20
+      else
+        puts "Contato não encontrado ou nome não fornecido" if !contato[:contato] || !nome
+      end
     end
-end
+  end
+  
+
 
    
 
