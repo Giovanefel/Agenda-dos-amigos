@@ -14,25 +14,25 @@
 
 @agenda =[
 {nome:"EuGiovane" , telefone:"219999999"},
+{nome:"lucas" , telefone:"819999999"}
 ]
-def todos_contatos
+def todos_contatos                              # 1 mostrar todos os contatos
     @agenda.each do |contato|
-        puts"#{contato[:nome]} - #{contato[:telefone]}"
+        puts "#{contato[:nome]} - #{contato[:telefone]}"
+        puts "--------------------------------------"
     end
 end
 
-def adicionar_contato
+def adicionar_contato                          # 2 adicionar todos os contatos
     print "Nome:"
     nome = gets.chomp
     print "telefone:"
     telefone = gets.chomp
 
     @agenda << {nome: nome, telefone: telefone}
-<<<<<<< HEAD
-=======
 end
 
-def Ver_contato
+def Ver_contato                               # 3 mostrar o contato desejado
     print"Qual nome voce deseja:"
     nome = gets.chomp
 
@@ -41,19 +41,9 @@ def Ver_contato
             puts "#{contato[nome]} - #{contato[:telefone]}"
         end
     end
->>>>>>> 400b801ce9f597dad8faba95f691da315e4116ff
 end
 
-    def ver_contato
-        print"qual nome deseja?"
-        nome = gets.chomp
-
-        @agenda.each do |contato|
-            if contato [:nome].downcase.include?(nome.downcase)
-                puts"#{contato[:nome]} - #{contato[:telefone]}"
-            end
-        end
-    end
+   
 
 loop do 
 
@@ -68,21 +58,10 @@ loop do
     break
     when 1
         todos_contatos
-<<<<<<< HEAD
     when 2
         adicionar_contato
     when 3
         ver_contato 
-=======
-        puts"lista de contatos"
-    
-    when codigo == 2
-    adicionar_contato
-    puts"dados do contato"
-
-    when codigo == 3
-        Ver_contato
->>>>>>> 400b801ce9f597dad8faba95f691da315e4116ff
     end
 end
 # faça um teste para verificar se rodou 
