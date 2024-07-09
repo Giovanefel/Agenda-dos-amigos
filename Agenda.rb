@@ -24,42 +24,44 @@ def todos_contatos                              # 1 mostrar todos os contatos
 end
 
 def adicionar_contato                          # 2 adicionar todos os contatos
-    print "Nome:"
+    print " Nome: "
     nome = gets.chomp
-    print "telefone:"
+    print " telefone: "
     telefone = gets.chomp
 
+    #encontrado = false                           #chat
     @agenda << {nome: nome, telefone: telefone}
 end
 
-#def ver_contato                               # 3 mostrar o contato desejado
-   # print"Qual nome voce deseja:"
-   # nome = gets.chomp
-
-    #@agenda.each do |contato|
-    #   if contato[:contato].downcase.include?(nome.downcase)
-    #        puts "#{contato[:nome]} - #{contato[:telefone]}"
-   #         puts "-" * 20
-    #    end
-   # end
-#end
 def ver_contato                               # 3 mostrar o contato desejado
-    print "Qual nome você deseja: "
+    print "Qual nome voce deseja:"
     nome = gets.chomp
-  
+
+    encontrado = false                    #chat
     @agenda.each do |contato|
-      if contato[:contato] && nome && contato[:contato].downcase.include?(nome.downcase)  #PAREI AQUI aula2    2:20s coreçao do chatgpt 
-        puts "#{contato[:nome]} - #{contato[:telefone]}"
-        puts "-" * 20
-      else
-        puts "Contato não encontrado ou nome não fornecido" if !contato[:contato] || !nome
-      end
+       if contato[:nome].downcase.include?(nome.downcase)
+            puts "#{contato[:nome]} - #{contato[:telefone]}"
+            puts "-" * 20
+            encontrado = true               #chat
+        end
     end
-  end
+    puts "Contato não encontrado" unless encontrado #chat
+end
+
+def editar_contato
+    print "qual nome deseja editar?"
+   nome = gets.chomp
+
+    @agenda.each do |contato|
+        if contato [:nome].downcase == (nome.downcase)
+            print" nome para editar, se quise mesmo nome, aperte enter"
+            nome_salvo = contato [:nome]
+
+        end                              #parei aqui  AULA2 6:49
+
+    end
+end
   
-
-
-   
 
 loop do 
 
@@ -70,19 +72,21 @@ loop do
     case codigo
     when 0
         puts"Até logo"
-    
     break
+
     when 1
         todos_contatos
     when 2
         adicionar_contato
     when 3
         ver_contato 
+    when 4
+        editar_contato
     end
 end
-# faça um teste para verificar se rodou 
-    # assim que alterar algo infomar no grupo
-    #continuar 
+       # faça um teste para verificar se rodou 
+       # assim que alterar algo infomar no grupo
+    
 
 
 
