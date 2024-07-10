@@ -48,17 +48,26 @@ def ver_contato                               # 3 mostrar o contato desejado
     puts "Contato não encontrado" unless encontrado #chat
 end
 
-def editar_contato
+def editar_contato                            # 4 editar contato
     print "qual nome deseja editar?"
    nome = gets.chomp
 
     @agenda.each do |contato|
         if contato [:nome].downcase == (nome.downcase)
-            print" nome para editar, se quise mesmo nome, aperte enter"
+            print" nome para editar, se quiser mesmo nome, aperte enter"
             nome_salvo = contato [:nome]
 
-        end                              #parei aqui  AULA2 6:49
+            contato[:nome] = gets.chomp
+            contato[:nome] = contato[:nome].empty? ? nome_salvo : contato[:nome] 
 
+            print" telefone para editar, se quiser mesmo telefone, aperte enter"
+            telefone_salvo = contato [:telefone]
+
+            contato[:telefone] = gets.chomp
+            contato[:telefone] = contato[:telefone].empty? ? telefone_salvo : contato[:telefone] 
+
+                            #editar funcionou corretamente  8:42s
+        end                             
     end
 end
   
