@@ -54,23 +54,35 @@ def editar_contato                            # 4 editar contato
 
     @agenda.each do |contato|
         if contato [:nome].downcase == (nome.downcase)
-            print" nome para editar, se quiser mesmo nome, aperte enter"
+            print" nome para editar, se quiser mesmo nome, aperte enter:"
             nome_salvo = contato [:nome]
 
             contato[:nome] = gets.chomp
             contato[:nome] = contato[:nome].empty? ? nome_salvo : contato[:nome] 
 
-            print" telefone para editar, se quiser mesmo telefone, aperte enter"
+            print" telefone para editar, se quiser mesmo telefone, aperte enter:"
             telefone_salvo = contato [:telefone]
 
             contato[:telefone] = gets.chomp
             contato[:telefone] = contato[:telefone].empty? ? telefone_salvo : contato[:telefone] 
 
-                            #editar funcionou corretamente  8:42s
+                            
         end                             
     end
 end
-  
+
+    def remover_contato                        # 5 remover contato
+        print "qual nome deseja remover?"
+   nome = gets.chomp
+
+   @agenda.each do |contato|
+    if contato[:nome].downcase.include?(nome.downcase)
+        indice = @agenda.index(contato)
+        @agenda.delete_at(indice)
+        break
+    end
+   end
+end
 
 loop do 
 
@@ -91,12 +103,16 @@ loop do
         ver_contato 
     when 4
         editar_contato
+    when 5
+        remover_contato
+    else
+        puts " Funçao nao existe, use uma funçao válida"
     end
 end
        # faça um teste para verificar se rodou 
        # assim que alterar algo infomar no grupo
     
-
+                                                  # Agenda finalizada!!!!!!!!!
 
 
 
